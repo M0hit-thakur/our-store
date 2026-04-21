@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import API from "../constants";
 
 function Home({ cart, setCart, themeOn, setThemeOn }) {
   const [products,setProducts,] = useState([]);
@@ -60,10 +61,18 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
   
   // Fetch products
   useEffect(() => {
-    fetch('our-store-server-production-087e.up.railway.app/api/products')
-      .then((res) => res.json())
+    fetch(`${API}/api/products`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => setProducts(data))
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        toast.error("Failed to fetch products");
+      });
   }, []);
 
   return (

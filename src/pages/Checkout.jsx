@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../App.css";
+import API from "../constants";
 
 function Checkout({ cart, setCart }) {
   const navigate = useNavigate();
