@@ -60,7 +60,7 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
   
   // Fetch products
   useEffect(() => {
-    fetch(`${API}/api/products`)
+    fetch('our-store-server-production-087e.up.railway.app/api/products')
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error(err));
