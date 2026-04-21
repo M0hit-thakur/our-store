@@ -6,7 +6,7 @@ function OrderDetails() {
   const [order, setOrder] = useState(null);
 
   useEffect(() => {
-  fetch(`our-store-server-production-087e.up.railway.app/api/orders/place/${userId}`) // abhi hardcoded userId
+  fetch(`${API}/api/orders/place/${userId}`) // abhi hardcoded userId
     .then(res => {
       if (!res.ok) {
         throw new Error("Error: " + res.status);
