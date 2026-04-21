@@ -41,7 +41,7 @@ function Checkout({ cart, setCart }) {
 
     try {
       // 🟡 STEP 1: Create Razorpay Order
-      const res = await fetch("http://localhost:8080/api/payment/create-order", {
+      const res = await fetch("our-store-server-production-087e.up.railway.app/api/payment/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -73,7 +73,7 @@ function Checkout({ cart, setCart }) {
 
           try {
             const orderRes = await fetch(
-              "http://localhost:8080/api/orders/place/1",
+              "our-store-server-production-087e.up.railway.app/api/orders/place/1",
               {
                 method: "POST",
                 headers: {

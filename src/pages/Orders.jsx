@@ -6,7 +6,7 @@ function Orders() {
 
   const removeOrder = async (id) => {
     try {
-      await fetch(`http://localhost:8080/api/orders/${id}`, {
+      await fetch(`our-store-server-production-087e.up.railway.app/api/orders/${id}`, {
         method: "DELETE",
       });
     } catch (err) {
@@ -17,7 +17,7 @@ function Orders() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/orders/user/1") // abhi hardcoded userId
+    fetch("our-store-server-production-087e.up.railway.app/api/orders/user/1") // abhi hardcoded userId
       .then(res => res.json())
       .then(data => {
         console.log("Orders:", data);
