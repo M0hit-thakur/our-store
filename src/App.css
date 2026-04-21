@@ -503,6 +503,50 @@ body.theme-active .back-btn {
   transform: scale(0.95);
 }
 
+/* ================= COMING SOON CARD ================= */
+.card.coming-soon {
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 200, 100, 0.1));
+  border: 2px dashed rgba(255, 140, 0, 0.3);
+  box-shadow: 0 20px 48px rgba(255, 140, 0, 0.1);
+}
+
+.card.coming-soon h3 {
+  color: #ff8c00;
+  font-size: 24px;
+}
+
+.card.coming-soon p {
+  color: #666;
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.coming-soon-general {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile coming soon */
+@media (max-width: 768px) {
+  .coming-soon-general {
+    margin-top: 20px;
+  }
+
+  .card.coming-soon {
+    padding: 16px;
+  }
+
+  .card.coming-soon h3 {
+    font-size: 20px;
+  }
+
+  .card.coming-soon p {
+    font-size: 14px;
+  }
+}
+
 /* ================= PRODUCT DETAILS ================= */
 .details-container {
   max-width: 1100px;
@@ -834,6 +878,74 @@ body.theme-active .back-btn {
   padding: 24px;
 }
 
+/* Mobile cart */
+@media (max-width: 768px) {
+  .cart-container {
+    padding: 10px;
+  }
+
+  .cart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cart-header h1 {
+    font-size: 24px;
+  }
+
+  .cart-header p {
+    font-size: 14px;
+  }
+
+  .cart-card {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .cart-card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cart-info {
+    min-width: 200px;
+    gap: 8px;
+  }
+
+  .cart-info h3 {
+    font-size: 18px;
+  }
+
+  .cart-info h4 {
+    font-size: 16px;
+  }
+
+  .cart-item-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cart-item-actions button {
+    width: 100%;
+  }
+
+  .cart-total {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .cart-total h2 {
+    text-align: center;
+  }
+
+  .checkout-btn {
+    width: 100%;
+  }
+}
+
 .checkout-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -866,6 +978,41 @@ body.theme-active .back-btn {
 .place-order-btn {
   width: 100%;
   margin-top: 20px;
+}
+
+/* Mobile checkout */
+@media (max-width: 768px) {
+  .checkout-container {
+    padding: 10px;
+  }
+
+  .checkout-container h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .checkout-form,
+  .checkout-summary {
+    padding: 20px;
+  }
+
+  .checkout-form input {
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+
+  .summary-item {
+    font-size: 14px;
+  }
+
+  .checkout-summary h3 {
+    font-size: 20px;
+  }
 }
 
 .orders-container {
@@ -1048,6 +1195,92 @@ body.theme-active .back-btn {
   }
 
   .developer-card img {
+    margin: 0 auto;
+  }
+}
+
+/* Mobile orders and order details */
+@media (max-width: 768px) {
+  .orders-container,
+  .order-details-container,
+  .contact-container {
+    padding: 10px;
+  }
+
+  .orders-container h2,
+  .order-details-container h2,
+  .contact-container h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .order-card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .order-card-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .order-card .view-btn,
+  .order-card .remove-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .order-details-container .order-card {
+    padding: 20px;
+  }
+
+  .contact-page-card {
+    padding: 24px 20px;
+  }
+
+  .developer-info h2 {
+    font-size: 24px;
+  }
+
+  .developer-card {
+    padding: 20px;
+    gap: 16px;
+  }
+}
+
+/* Mobile product details */
+@media (max-width: 768px) {
+  .details-container {
+    padding: 10px;
+  }
+
+  .details-card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .details-card img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .details-info {
+    text-align: center;
+  }
+
+  .details-info h2 {
+    font-size: 24px;
+  }
+
+  .details-info h3 {
+    font-size: 20px;
+  }
+
+  .add-btn {
+    width: 100%;
+    max-width: 200px;
     margin: 0 auto;
   }
 }

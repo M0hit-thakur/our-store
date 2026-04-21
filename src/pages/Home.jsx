@@ -102,7 +102,7 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
         </div>
       </div>
 
-      <ImageSlider />
+      <ImageSlider products={products} />
 
       <div className="navbar-categories">
         <div className="category-container">
@@ -156,6 +156,14 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
               <p>Products coming soon...</p>
             </div>
           )}
+        </div>
+
+        {/* More Products Coming Soon Card */}
+        <div className="coming-soon-general">
+          <div className="card coming-soon">
+            <h3>🚀 More Products Coming Soon!</h3>
+            <p>We're constantly adding new items to our collection. Stay tuned for exciting updates!</p>
+          </div>
         </div>
        </div> 
     </>

@@ -10,17 +10,28 @@
 .slider-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.slider-container:active {
+  cursor: grabbing;
 }
 
 .slide {
   min-width: 100%;
   height: 300px;
+  flex-shrink: 0;
 }
 
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none; /* Prevent image dragging */
 }
 
 .slider-dots {
