@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import API from "../constants";
+import ImageSlider from "../components/ImageSlider";
 
 function Home({ cart, setCart, themeOn, setThemeOn }) {
   const [products,setProducts,] = useState([]);
@@ -99,21 +100,23 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
             🛒 ({cart.length})
           </Link>
         </div>
+      </div>
 
-        <div className="navbar-categories">
-          <div className="category-container">
-            {["All", "Watch", "Shirt", "Pants", "Glasses", "Shoes"].map((cat) => (
-              <button
-                key={cat}
-                className={`category-btn ${
-                  category === cat ? "active" : ""
-                }`}
-                onClick={() => setCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+      <ImageSlider />
+
+      <div className="navbar-categories">
+        <div className="category-container">
+          {["All", "Watch", "Shirt", "Pants", "Glasses", "Shoes"].map((cat) => (
+            <button
+              key={cat}
+              className={`category-btn ${
+                category === cat ? "active" : ""
+              }`}
+              onClick={() => setCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
       </div>
 
