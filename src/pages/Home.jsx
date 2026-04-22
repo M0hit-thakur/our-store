@@ -79,26 +79,28 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
   return (
     <>
       <div className="navbar">
-        <div className="logo">🛍️ Our Store</div>
-        
-        <div className="nav-links">
-          <Link to="/orders">📝 Order-History</Link>
-          <Link to="/contact">📞 Contact</Link>
+        <div className="navbar-top">
+          <div className="logo">🛍️ Our Store</div>
+          
+          <div className="nav-links">
+            <Link to="/orders">📝 Order-History</Link>
+            <Link to="/contact">📞 Contact</Link>
 
-          <div className="theme-switch">
-            <span>{themeOn ? "Dark" : "Light"}</span>
-            <button
-              className={`switch-toggle ${themeOn ? "on" : ""}`}
-              onClick={() => setThemeOn((prev) => !prev)}
-              aria-label="Toggle theme"
-            >
-              <span className="switch-handle" />
-            </button>
+            <Link to="/cart" className="cart-icon" id="cart-icon">
+              🛒 ({cart.length})
+            </Link>
           </div>
+        </div>
 
-          <Link to="/cart" className="cart-icon" id="cart-icon">
-            🛒 ({cart.length})
-          </Link>
+        <div className="theme-switch">
+          <span>{themeOn ? "Dark" : "Light"}</span>
+          <button
+            className={`switch-toggle ${themeOn ? "on" : ""}`}
+            onClick={() => setThemeOn((prev) => !prev)}
+            aria-label="Toggle theme"
+          >
+            <span className="switch-handle" />
+          </button>
         </div>
       </div>
 

@@ -22,7 +22,38 @@ function ProductDetails({ cart, setCart }) {
 
   if (!product) return <h2>Product not found</h2>;
 
+  const animationToCart = (imgElement) => {
+    const clone = imgElement.cloneNode(true);
+
+    clone.style.position = "fixed";
+    clone.style.left = imgElement.getBoundingClientRect().left + "px";
+    clone.style.top = imgElement.getBoundingClientRect().top + "px";
+    clone.style.width = imgElement.getBoundingClientRect().width + "px";
+    clone.style.height = imgElement.getBoundingClientRect().height + "px";
+    clone.style.transition = "all 0.8s ease";
+    clone.style.zIndex = 1000;
+
+    document.body.appendChild(clone);
+
+    setTimeout(() => {
+      clone.style.left = (window.innerWidth - 50) + "px"; // Top-right corner
+      clone.style.top = "20px";
+      clone.style.width = "30px";
+      clone.style.height = "30px";
+      clone.style.opacity = 0.5;
+    }, 50);
+
+    setTimeout(() => {
+      document.body.removeChild(clone);
+    }, 800);
+  };
+
   const addToCart = () => {
+    const img = document.querySelector('.details-card img');
+    if (img) {
+      animationToCart(img);
+    }
+
     setCart((prevCart) => {
       const exists = prevCart.find((item) => item.id === product.id);
 
