@@ -7,6 +7,7 @@ import ImageSlider from "../components/ImageSlider";
 function Home({ cart, setCart, themeOn, setThemeOn }) {
   const [products,setProducts,] = useState([]);
   const [category, setCategory] = useState("All");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Filter
   const filteredProducts =
@@ -82,15 +83,34 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
         <div className="navbar-top">
           <div className="logo">🛍️ Our Store</div>
           
-          <div className="nav-links">
+          <div className="nav-links desktop-nav">
             <Link to="/orders">📝 Order-History</Link>
             <Link to="/contact">📞 Contact</Link>
-
             <Link to="/cart" className="cart-icon" id="cart-icon">
               🛒 ({cart.length})
             </Link>
           </div>
+
+          <button 
+            className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+
+        {mobileMenuOpen && (
+          <div className="mobile-nav">
+            <Link to="/orders" onClick={() => setMobileMenuOpen(false)}>📝 Order-History</Link>
+            <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>📞 Contact</Link>
+            <Link to="/cart" className="cart-icon" id="cart-icon" onClick={() => setMobileMenuOpen(false)}>
+              🛒 ({cart.length})
+            </Link>
+          </div>
+        )}
 
         <div className="theme-switch">
           <span>{themeOn ? "Dark" : "Light"}</span>
