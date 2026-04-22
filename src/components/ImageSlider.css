@@ -60,4 +60,15 @@
   .slide {
     height: 200px;
   }
+
+  .slider {
+    margin: 10px auto;
+    border-radius: 12px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
 }
