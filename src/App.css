@@ -61,6 +61,38 @@ body {
   align-items: center;
 }
 
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  font-family: 'Poppins', cursive;
+  animation: gradientShift 3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo::before {
+  content: '🛍️';
+  font-size: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 /* Mobile navbar */
 @media (max-width: 768px) {
   .navbar {
@@ -78,7 +110,7 @@ body {
   }
 
   .logo {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .theme-switch {
@@ -207,12 +239,13 @@ body.theme-active .card {
   border: 1px solid rgba(148, 163, 184, 0.22);
 }
 
-body.theme-active .logo,
-body.theme-active .nav-links a,
-body.theme-active .theme-switch,
-body.theme-active .cart-icon,
-body.theme-active .category-container button {
-  color: #e2e8f0;
+body.theme-active .logo {
+  background: linear-gradient(135deg, #ff8c69, #7dd3fc, #a78bfa, #fbbf24);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
 }
 
 body.theme-active .nav-links a {

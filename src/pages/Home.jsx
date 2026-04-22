@@ -31,6 +31,7 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
 
   const animationToCart = (imgElement) => {
     const cart = document.getElementById("cart-icon");
+    if (!cart) return; // Skip animation if cart icon is not visible
     
     const imgRect = imgElement.getBoundingClientRect();
     const cartRect = cart.getBoundingClientRect();
@@ -81,7 +82,7 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
     <>
       <div className="navbar">
         <div className="navbar-top">
-          <div className="logo">🛍️ Our Store</div>
+          <div className="logo">Our Store</div>
           
           <div className="nav-links desktop-nav">
             <Link to="/orders">📝 Order-History</Link>
@@ -104,11 +105,7 @@ function Home({ cart, setCart, themeOn, setThemeOn }) {
 
         {mobileMenuOpen && (
           <div className="mobile-nav">
-            <Link to="/orders" onClick={() => setMobileMenuOpen(false)}>📝 Order-History</Link>
-            <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>📞 Contact</Link>
-            <Link to="/cart" className="cart-icon" id="cart-icon" onClick={() => setMobileMenuOpen(false)}>
-              🛒 ({cart.length})
-            </Link>
+            {/* Mobile menu items can be added here if needed */}
           </div>
         )}
 
