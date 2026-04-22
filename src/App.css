@@ -191,15 +191,42 @@ body {
 
 @media (min-width: 769px) {
   .hamburger {
-    display: none;
+    display: flex;
   }
 
   .mobile-nav {
-    display: none;
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 22px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 25px rgba(15, 30, 60, 0.15);
+    padding: 12px;
+    min-width: 180px;
+    z-index: 1000;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .desktop-nav {
-    display: flex;
+    display: none;
+  }
+
+  body.theme-active .mobile-nav {
+    background: rgba(148, 163, 184, 0.2);
+    border-color: rgba(148, 163, 184, 0.3);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
   }
 }
 
