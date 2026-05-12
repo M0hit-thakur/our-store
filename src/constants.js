@@ -1,3 +1,3 @@
-const API = 'https://our-store-server-production-087e.up.railway.app';
+const API = ' https://our-store-server.onrender.com';
 
 export default API;
